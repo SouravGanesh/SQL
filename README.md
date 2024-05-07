@@ -12,3 +12,5 @@ The following is a simplified explanation of the SQL execution order:
 ![img](https://github.com/SouravGanesh/Data-Digest/blob/dd42d0edc87c70f0c0e2e66e6860c5b7fbd999dd/images/sql1.gif)
 
 ![img](https://github.com/SouravGanesh/Data-Digest/blob/e23ea2617f2fdd2718a01395a324f35f52bcada4/images/sql2.jpg)
+
+![img](https://github.com/SouravGanesh/Data-Digest/blob/e23ea2617f2fdd2718a01395a324f35f52bcada4/images/sql3.jpg)
