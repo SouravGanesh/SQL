@@ -9,4 +9,4 @@ The following is a simplified explanation of the SQL execution order:
 • 𝐎𝐑𝐃𝐄𝐑 𝐁𝐘: The ORDER BY clause is used to sort the result set in ascending or descending order.
 • 𝐋𝐈𝐌𝐈𝐓: The LIMIT clause can be used to restrict the number of rows returned.
 
-1[img](https://github.com/SouravGanesh/Data-Digest/blob/dd42d0edc87c70f0c0e2e66e6860c5b7fbd999dd/images/sql1.gif)
+![img](https://github.com/SouravGanesh/Data-Digest/blob/dd42d0edc87c70f0c0e2e66e6860c5b7fbd999dd/images/sql1.gif)
