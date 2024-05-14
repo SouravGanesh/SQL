@@ -1,3 +1,24 @@
+--string functions
+
 select dept_id,STRING_AGG(emp_name,';' )  WITHIN GROUP (ORDER BY salary desc) as list_of_employees
 from employee
 group by dept_id;
+
+
+
+select order_id,customer_name
+,trim(' ankit bansal ')
+,reverse(customer_name) as rev
+,REPLACE(order_id,'CA','PB') as replace_ca
+,REPLACE(customer_name,' ','') as replace_space
+,TRANSLATE(customer_name,'AC','B@') as translate_AG
+,len(customer_name) as len_name
+,left(customer_name,4) as name_4
+,right(customer_name,5) as name_5
+--,SUBSTRING(order_id,4,4) as order_year
+,left(customer_name,CHARINDEX(' ',customer_name)) as first_name
+,CHARINDEX(' ',customer_name) as space_position
+,CHARINDEX('n',customer_name) as first_position
+,concat(order_id,'-',customer_name)
+,order_id+'-'+customer_name 
+from orders;
