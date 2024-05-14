@@ -34,3 +34,11 @@ from orders
 --customer_name , count_of_occurence_of_n
 select customer_name , len(customer_name)-len(replace(lower(customer_name),'n','')) as count_of_occurence_of_n
 from orders
+
+  
+--6- the first 2 characters of order_id represents the country of order placed . write a query to print total no of orders placed in each country
+--(an order can have 2 rows in the data when more than 1 item was purchased in the order but it should be considered as 1 order)
+select left(order_id,2) as country, count(distinct order_id) as total_orders
+from orders 
+group by left(order_id,2)
+
