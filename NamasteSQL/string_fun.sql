@@ -28,3 +28,9 @@ from orders;
 select customer_name , trim(SUBSTRING(customer_name,1,CHARINDEX(' ',customer_name))) as first_name
 , SUBSTRING(customer_name,CHARINDEX(' ',customer_name)+1,len(customer_name)-CHARINDEX(' ',customer_name)+1) as second_name
 from orders
+
+
+--4- write a query to print customer name and no of occurence of character 'n' in the customer name.
+--customer_name , count_of_occurence_of_n
+select customer_name , len(customer_name)-len(replace(lower(customer_name),'n','')) as count_of_occurence_of_n
+from orders
