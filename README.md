@@ -206,3 +206,62 @@ FROM
 ```
 
 In this example, we're calculating a running total of salaries for each department. The `ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW` part specifies the window frame for the running total calculation. It includes all rows from the beginning of the partition up to the current row.
+
+# Stored Procedure
+
+1. **Creating a stored procedure using CREATE PROCEDURE command:**
+   
+   ```
+   CREATE PROCEDURE GetEmployeeDetails
+   AS
+   BEGIN
+       SELECT * FROM Employees;
+   END;
+   ```
+   This creates a stored procedure named `GetEmployeeDetails` that selects all records from the `Employees` table.
+
+2. **Executing a stored procedure using EXECUTE command:**
+
+   ```
+   EXECUTE GetEmployeeDetails;
+   ```
+   This executes the stored procedure `GetEmployeeDetails`, returning all employee details.
+
+3. **Passing parameters to a stored procedure:**
+
+   ```
+   CREATE PROCEDURE GetEmployeeByID
+       @EmployeeID INT
+   AS
+   BEGIN
+       SELECT * FROM Employees WHERE EmployeeID = @EmployeeID;
+   END;
+   ```
+   Here, `@EmployeeID` is a parameter passed to the stored procedure `GetEmployeeByID` which filters the records based on the provided ID.
+
+   To execute this stored procedure with a specific ID:
+   
+   ```
+   EXECUTE GetEmployeeByID @EmployeeID = 12345;
+   ```
+
+4. **Returning values from a stored procedure:**
+
+   ```
+   CREATE PROCEDURE GetEmployeeCount
+       @EmployeeCount INT OUTPUT
+   AS
+   BEGIN
+       SELECT @EmployeeCount = COUNT(*) FROM Employees;
+   END;
+   ```
+   This stored procedure `GetEmployeeCount` calculates the total number of employees and assigns it to the output parameter `@EmployeeCount`.
+
+   To execute this stored procedure and get the count:
+   
+   ```
+   DECLARE @Count INT;
+   EXECUTE GetEmployeeCount @EmployeeCount = @Count OUTPUT;
+   PRINT 'Total number of employees: ' + CAST(@Count AS VARCHAR);
+   ```
+   This will print the total number of employees retrieved by the stored procedure.
