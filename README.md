@@ -48,6 +48,7 @@ The following is a simplified explanation of the SQL execution order:
      DROP INDEX idx_employee_department;
      ```
 
+# TCL (Transaction Control Language)
 TCL (Transaction Control Language) commands in SQL are used to manage transactions within a database. Transactions are sets of SQL statements that are executed as a single unit, either all successfully or none at all. TCL commands help ensure data integrity and consistency in the database. Here are some TCL commands along with examples:
 
 1. **COMMIT**: This command is used to permanently save the changes made during the current transaction.
@@ -85,6 +86,7 @@ TCL (Transaction Control Language) commands in SQL are used to manage transactio
 
 These are some common TCL commands used in SQL, helping to maintain the integrity of the database by managing transactions effectively.
 
+# Data Control Language (DCL)
 Data Control Language (DCL) commands in SQL are used to control access to the database and its objects. These commands primarily deal with permissions, granting or revoking privileges to users or roles. Here are some common DCL commands with examples:
 
 1. **GRANT**: This command is used to provide specific privileges to users or roles.
@@ -113,8 +115,8 @@ Data Control Language (DCL) commands in SQL are used to control access to the da
 
 These commands are crucial for managing the security and integrity of the database by ensuring that only authorized users have access to specific data and operations within the database.
 
-
-Sure! SQL Window functions are powerful tools for performing calculations across a set of rows related to the current row within a query result. Let's break down each part and provide examples:
+# SQL Window functions
+SQL Window functions are powerful tools for performing calculations across a set of rows related to the current row within a query result. Let's break down each part and provide examples:
 
 1. **OVER Clause**:
    The `OVER` clause defines a window of rows over which a window function operates. It specifies the partitioning and ordering of the rows.
