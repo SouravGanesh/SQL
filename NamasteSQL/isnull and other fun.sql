@@ -20,7 +20,14 @@ insert into drivers values('dri_2', '12:15', '12:30', 'f','g'),('dri_2', '13:30'
 --3- write a query to print below output using drivers table. 
 --Profit rides are the no of rides where end location of a ride is same as start location of immediate next ride for a driver
 --id, total_rides , profit_rides
---lead function window
+select d1.id as driver_id,count(*) as total rides,count(d2.id) as profit_rides
+from drivers d1
+left join drivers d2
+on d1.id=d2.1d and d1.end_loc = d2.start_loc and d1.end_time = d2.start_time
+group by d1.id;
+
+
+--Window Functions
 select id, count(1) as total_rides
 ,sum(case when end_loc=next_start_location then 1 else 0 end ) as profit_rides
 from (
@@ -29,7 +36,8 @@ select *
 from drivers) A
 group by id;
 
---self join
+--Or
+
 with rides as (
 select *,row_number() over(partition by id order by start_time asc) as rn
 from drivers)
